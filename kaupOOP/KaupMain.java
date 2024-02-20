@@ -1,4 +1,4 @@
-package kaupTest;
+package kaupOOP;
 
 public class KaupMain {
     //BMI 구하는 프로그램을 작성해주세요.

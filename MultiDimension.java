@@ -19,11 +19,9 @@ public class MultiDimension {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("1반");
-        int stuCount1 = numOfStu(sc);
-        System.out.println("2반");
-        int stuCount2 = numOfStu(sc);
-
+        System.out.println("학생수를 입력하세요 : ");
+        int stuCount1 = 0;
+        int stuCount2 = 0;
 
         System.out.println("1반 학생의 점수를 입력하세요 : ");
         int avg1 = avgOfClass(stuCount1);
