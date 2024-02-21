@@ -1,29 +1,26 @@
 package kaupOOP;
 
+import memberOOP.Member;
+
 import java.util.Scanner;
 
 public class KaupView {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Person ps = new Person();
+        Member member = new Member((Math.random() * 50 + 150),(Math.random() * 69 + 30));
 
-        System.out.println("이름을 입력하세요");
-        ps.setName(sc.next());
-
+        KaupService service = new KaupServiceImpl();
         System.out.println("========== BMI 계산 ==========");
-        System.out.printf("이름 : %s", ps.getName());
+        System.out.printf("이름 : %s", member.getName());
+        System.out.printf("몸무게는 : %.1f", member.getWeight());
+        System.out.printf("\n키는 : %.1f", member.getHeight());
 
-        ps.setWeight(ps.createRandomWeight());
-        System.out.printf("몸무게는 : %.1f", ps.getWeight());
+        double bmi = service.createBMI();
+        System.out.printf("\nBMI는 : %.1f", bmi);
 
-        ps.setHeight(ps.createRandomHeight());
-        System.out.printf("\n키는 : %.1f", ps.getHeight());
+        String bodyMass = service.createBodyMass();
+        System.out.printf("\n체지방은 : %s 입니다.\n", bodyMass);
 
-        ps.createBMI();
-        System.out.printf("\nBMI는 : %.1f", ps.getBmi());
-
-        ps.createBodyMass();
-        System.out.printf("\n체지방은 : %s 입니다.\n", ps.getBodyMass());
         System.out.println("========== BMI 계산 ==========");
     }
 }

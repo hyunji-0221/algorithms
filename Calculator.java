@@ -15,17 +15,36 @@ public class Calculator {
         int num1 = Integer.parseInt(firstNum);
         int num2 = Integer.parseInt(secondNum);
 
-        if (opCode.equals("+")) {
-            result = num1 + num2;
-        } else if (opCode.equals("-")) { // 경우의 수 추가하기
-            result = num1 - num2;
-        } else if (opCode.equals("*")) {
-            result = num1 * num2;
-        } else if (opCode.equals("/")) {
-            result = num1 / num2;
-        } else {
-            System.out.println("잘못된 연산기호 입니다.");
+//        if (opCode.equals("+")) {
+//            result = num1 + num2;
+//        } else if (opCode.equals("-")) { // 경우의 수 추가하기
+//            result = num1 - num2;
+//        } else if (opCode.equals("*")) {
+//            result = num1 * num2;
+//        } else if (opCode.equals("/")) {
+//            result = num1 / num2;
+//        } else {
+//            System.out.println("잘못된 연산기호 입니다.");
+//        }
+
+
+        switch (opCode) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+            default:
+                System.out.println("잘못된 연산자");
         }
+
 
         System.out.println("입력받은 숫자는 : " + firstNum + ", " + secondNum);
         System.out.println("결과는 : " + result);

@@ -10,7 +10,43 @@ public class Member {
     private String address;
     private String job;
 
-    public void setUserName(String id) {
+    //Person에서 가져온 필드
+    private double height;
+    private double weight;
+
+    //kaup지수에서 사용하는 생성자
+    public Member(double height,double weight){
+        this.height = height;
+        this.weight = weight;
+    }
+
+
+    //회원가입에서 사용하는 생성자
+    public Member(String userName, String password, String passwordChecks,
+                  String name, String rrn, String pNum, String address, String job){
+        this.userName = userName;
+        this.password = password;
+        this.passwordCheck = passwordChecks;
+        this.name = name;
+        this.rrn = rrn;
+        this.pNum = pNum;
+        this.address = address;
+        this.job = job;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "userName='" + userName + '\'' +
+                ", name='" + name + '\'' +
+                ", rrn='" + rrn + '\'' +
+                ", pNum='" + pNum + '\'' +
+                ", address='" + address + '\'' +
+                ", job='" + job + '\'' +
+                '}';
+    }
+
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
@@ -21,6 +57,7 @@ public class Member {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public String getPassword() {
         return this.password;
     }
@@ -72,5 +109,22 @@ public class Member {
     public String getJob() {
         return this.job;
     }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
 
 }
