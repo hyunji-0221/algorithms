@@ -19,6 +19,7 @@ public class LottoMatching {
     public static void main(String[] args) {
         int[] purchaseLotto = new int[6];
         int[] raffleLotto = new int[6];
+
         purchaseLotto = createLottoNumber(purchaseLotto);
         raffleLotto = createLottoNumber(raffleLotto);
 
@@ -89,7 +90,7 @@ public class LottoMatching {
 
     private static int[] createArrayWithoutDuplicates(int[] arr) {
         for (int i = 0; i < 6; i++) {
-            int randomNumber = createRandomNumber(1, 8);
+            int randomNumber = createRandomNumber(1, 45);
             boolean check = false;
             for (int j = 0; j < 6; j++) {
                 if (arr[j] == randomNumber) {
